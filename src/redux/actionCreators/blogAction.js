@@ -1,4 +1,4 @@
-import { LOAD_BLOG, SORT_TOGGLE } from "../actionTypes/blogActionTypes"
+import { DETAILS_BLOG, LOAD_BLOG, SORT_TOGGLE } from "../actionTypes/blogActionTypes"
 
 export const loadBlog = (blog) => {
     return {
@@ -10,6 +10,13 @@ export const loadBlog = (blog) => {
 export const sortToggle = (data) => {
     return {
         type: SORT_TOGGLE,
+        payload: data
+    }
+}
+
+export const loadBlogDetails = (data) => {
+    return {
+        type: DETAILS_BLOG,
         payload: data
     }
 }

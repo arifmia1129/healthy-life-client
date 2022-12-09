@@ -31,8 +31,8 @@ const Blogs = () => {
         />)
     }
 
-    const activeBtn = 'btn w-56 btn-primary mx-2';
-    const inActiveBtn = 'btn w-56 mx-2 bg-white text-black';
+    const activeBtn = 'btn w-56 btn-primary mx-2 m-2';
+    const inActiveBtn = 'btn w-56 mx-2 bg-white text-black m-2';
 
     return (
         <div>
