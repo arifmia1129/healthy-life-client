@@ -5,7 +5,7 @@ import Index from './routes';
 
 function App() {
   return (
-    <div>
+    <div className='max-w-7xl mx-auto px-2 md:px-0'>
       <Provider store={store}>
         <Index />
       </Provider>
