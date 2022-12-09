@@ -1,7 +1,8 @@
-import { LOAD_BLOG } from "../actionTypes/blogActionTypes";
+import { LOAD_BLOG, SORT_TOGGLE } from "../actionTypes/blogActionTypes";
 
 const initialBlogState = {
-    blog: []
+    blog: [],
+    sortBy: "first"
 }
 
 const blogReducer = (state = initialBlogState, action) => {
@@ -10,6 +11,11 @@ const blogReducer = (state = initialBlogState, action) => {
             return {
                 ...state,
                 blog: action.payload
+            }
+        case SORT_TOGGLE:
+            return {
+                ...state,
+                sortBy: action.payload
             }
         default:
             return state

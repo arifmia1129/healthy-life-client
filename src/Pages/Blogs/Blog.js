@@ -1,3 +1,4 @@
+import moment from 'moment/moment';
 import React from 'react';
 
 const Blog = ({ blog }) => {
@@ -8,6 +9,7 @@ const Blog = ({ blog }) => {
                 <img src={image} class="w-[100vw] rounded-lg md:w-[30vw]" alt='' />
                 <div className='md:w-[70vw]'>
                     <p className='font-bold text-red-700'>{category.toUpperCase()}</p>
+                    <p className='text-gray-500'>{moment(publishedDate).format("MMMM Do YYYY")}</p>
                     <h1 class="text-2xl font-bold">{title}</h1>
                     <p class="py-6">{description.slice(0, 100)}</p>
                     <button class="btn btn-primary">Read More</button>
