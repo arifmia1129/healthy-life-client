@@ -29,7 +29,7 @@ const blogReducer = (state = initialBlogState, action) => {
             if (!blog) {
                 return {
                     ...state,
-                    blogHistory: [...state.blogHistory, action.payload]
+                    blogHistory: [...state.blogHistory, { ...action.payload, position: state.blogHistory.length + 1 }]
                 }
             }
             return {
