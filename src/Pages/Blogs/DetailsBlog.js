@@ -18,7 +18,7 @@ const DetailsBlog = () => {
     }, [dispatch, id])
     return (
         <div>
-            <p className='text-[#A51C30] font-bold my-5'>{category.toUpperCase()}</p>
+            <p className='text-[#A51C30] font-bold my-5'>{category?.toUpperCase()}</p>
             <h3 className='text-4xl font-bold mb-5'>{title}</h3>
             <p>{moment(publishedDate).format("MMMM Do YYYY")}</p>
             <p className='my-5'>By <span className='text-[#A51C30] font-bold'>{author}</span></p>
