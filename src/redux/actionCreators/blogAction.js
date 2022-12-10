@@ -1,4 +1,4 @@
-import { DETAILS_BLOG, HISTORY_BLOG, LOAD_BLOG, REMOVE_BLOG, SORT_TOGGLE } from "../actionTypes/blogActionTypes"
+import { ADD_TAG, DETAILS_BLOG, HISTORY_BLOG, LOAD_BLOG, REMOVE_BLOG, SORT_TOGGLE } from "../actionTypes/blogActionTypes"
 
 export const loadBlog = (blog) => {
     return {
@@ -30,5 +30,12 @@ export const removeBlog = (id) => {
     return {
         type: REMOVE_BLOG,
         payload: id
+    }
+}
+
+export const addTag = (tag) => {
+    return {
+        type: ADD_TAG,
+        payload: tag
     }
 }

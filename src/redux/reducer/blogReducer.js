@@ -1,10 +1,11 @@
-import { DETAILS_BLOG, HISTORY_BLOG, LOAD_BLOG, REMOVE_BLOG, SORT_TOGGLE } from "../actionTypes/blogActionTypes";
+import { ADD_TAG, DETAILS_BLOG, HISTORY_BLOG, LOAD_BLOG, REMOVE_BLOG, SORT_TOGGLE } from "../actionTypes/blogActionTypes";
 
 const initialBlogState = {
     blog: [],
     sortBy: "first",
     blogDetails: {},
-    blogHistory: []
+    blogHistory: [],
+    tag: ""
 }
 
 const blogReducer = (state = initialBlogState, action) => {
@@ -39,6 +40,11 @@ const blogReducer = (state = initialBlogState, action) => {
             return {
                 ...state,
                 blog: state.blog.filter(b => b._id !== action.payload)
+            }
+        case ADD_TAG:
+            return {
+                ...state,
+                tag: action.payload
             }
         default:
             return state

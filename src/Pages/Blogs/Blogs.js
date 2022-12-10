@@ -18,14 +18,22 @@ const Blogs = () => {
 
     let content;
 
+    const tagName = useSelector(state => state.tag);
+
     if (sortBy === "first") {
         content = blogs.sort((a, b) => (new Date(a.publishedDate) > new Date(b.publishedDate) ? 1 : -1)).map(blog => <Blog
             key={blog._id}
             blog={blog}
         />)
     }
+    if (sortBy === "first" && tagName) {
+        content = blogs.sort((a, b) => (new Date(a.publishedDate) > new Date(b.publishedDate) ? 1 : -1)).sort((a, b) => b.tags.includes(tagName) - a.tags.includes(tagName)).map(blog => <Blog
+            key={blog._id}
+            blog={blog}
+        />)
+    }
     if (sortBy === "last") {
-        content = blogs.sort((a, b) => (new Date(a.publishedDate) > new Date(b.publishedDate) ? -1 : 1)).map(blog => <Blog
+        content = blogs.sort((a, b) => (new Date(a.publishedDate) > new Date(b.publishedDate) ? -1 : 1)).sort((a, b) => b.tags.includes(tagName) - a.tags.includes(tagName)).map(blog => <Blog
             key={blog._id}
             blog={blog}
         />)

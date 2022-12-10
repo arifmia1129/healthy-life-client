@@ -12,6 +12,7 @@ const AddBlog = () => {
         const description = event.target.description.value;
         const category = event.target.category.value;
         const author = event.target.author.value;
+        const tags = event.target.tags.value.split(",");
 
         const res = await fetch("https://healty-life.onrender.com/api/blog", {
             method: "POST",
@@ -23,7 +24,8 @@ const AddBlog = () => {
                 title,
                 description,
                 category,
-                author
+                author,
+                tags
             })
         })
 
@@ -41,6 +43,7 @@ const AddBlog = () => {
         event.target.description.value = ""
         event.target.category.value = ""
         event.target.author.value = ""
+        event.target.tags.value = ""
     }
 
     return (
@@ -83,11 +86,20 @@ const AddBlog = () => {
                             <option value="nutrition">Nutrition</option>
                         </select>
                     </div>
+
+                </div>
+                <div className='md:grid grid-cols-2'>
                     <div class="form-control w-full max-w-xs">
                         <label class="label">
                             <span class="label-text">Author Name</span>
                         </label>
                         <input name='author' type="text" placeholder="Author" class="input input-bordered w-full max-w-xs" />
+                    </div>
+                    <div class="form-control w-full max-w-xs">
+                        <label class="label">
+                            <span class="label-text">Tags</span>
+                        </label>
+                        <input name='tags' type="text" placeholder="Separate tag with comma" class="input input-bordered w-full max-w-xs" />
                     </div>
                 </div>
                 <button className='mt-5 btn btn-primary' type="submit">Add Blog</button>
