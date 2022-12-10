@@ -1,4 +1,4 @@
-import { DETAILS_BLOG, HISTORY_BLOG, LOAD_BLOG, SORT_TOGGLE } from "../actionTypes/blogActionTypes";
+import { DETAILS_BLOG, HISTORY_BLOG, LOAD_BLOG, REMOVE_BLOG, SORT_TOGGLE } from "../actionTypes/blogActionTypes";
 
 const initialBlogState = {
     blog: [],
@@ -34,6 +34,11 @@ const blogReducer = (state = initialBlogState, action) => {
             }
             return {
                 ...state
+            }
+        case REMOVE_BLOG:
+            return {
+                ...state,
+                blog: state.blog.filter(b => b._id !== action.payload)
             }
         default:
             return state
