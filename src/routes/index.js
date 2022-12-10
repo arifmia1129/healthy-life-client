@@ -3,6 +3,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Blogs from '../Pages/Blogs/Blogs';
 import DetailsBlog from '../Pages/Blogs/DetailsBlog';
 import ReadingHistory from '../Pages/Blogs/ReadingHistory';
+import AddBlog from '../Pages/Dashboard/AddBlog';
+import BlogList from '../Pages/Dashboard/BlogList';
+import Dashboard from '../Pages/Dashboard/Dashboard';
 import Navbar from '../Pages/Shared/Navbar';
 
 const Index = () => {
@@ -13,6 +16,10 @@ const Index = () => {
                 <Route path='/' element={<Blogs />} />
                 <Route path='/details/:id' element={<DetailsBlog />} />
                 <Route path='/reading-history' element={<ReadingHistory />} />
+                <Route path='/dashboard' element={<Dashboard />}>
+                    <Route index element={<BlogList />} />
+                    <Route path='add-blog' element={<AddBlog />} />
+                </Route>
             </Routes>
         </BrowserRouter>
     );

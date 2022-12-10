@@ -2,6 +2,8 @@ import { Provider } from 'react-redux';
 import './App.css';
 import store from './redux/store/store';
 import Index from './routes';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -9,6 +11,7 @@ function App() {
       <Provider store={store}>
         <Index />
       </Provider>
+      <ToastContainer />
     </div>
   );
 }

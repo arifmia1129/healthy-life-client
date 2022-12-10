@@ -11,6 +11,7 @@ const Navbar = () => {
                     </label>
                     <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><Link to="/reading-history">History</Link></li>
+                        <li><Link to="/dashboard">Dashboard</Link></li>
                     </ul>
                 </div>
                 <Link class="btn btn-ghost normal-case text-xl" to="/">Healthy Life</Link>
@@ -18,6 +19,7 @@ const Navbar = () => {
             <div class="navbar-end hidden lg:flex">
                 <ul class="menu menu-horizontal p-0">
                     <li><Link to="/reading-history">History</Link></li>
+                    <li><Link to="/dashboard">Dashboard</Link></li>
                 </ul>
             </div>
         </div>

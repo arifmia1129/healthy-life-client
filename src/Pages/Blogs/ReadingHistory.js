@@ -7,7 +7,7 @@ const ReadingHistory = () => {
     return (
         <div>
             {
-                blogs.sort((a, b) => (b.position - a.position))?.map(blog => <Blog key={blog._id} blog={blog} />)
+                blogs?.sort((a, b) => (b.position - a.position))?.map(blog => <Blog key={blog._id} blog={blog} />)
             }
         </div>
     );
